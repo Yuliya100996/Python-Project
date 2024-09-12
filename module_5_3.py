@@ -25,9 +25,9 @@ class House:
 
     def __add__(self, value):
         if isinstance(value, House):
-            self.number_of_floors + value.number_of_floors
+            self.number_of_floors += value.number_of_floors
         elif isinstance(value, int):
-            self.number_of_floors + value
+            self.number_of_floors += value
         return self
 
     def __radd__(self, value):
@@ -41,35 +41,35 @@ class House:
             self.number_of_floors < other.number_of_floors
         elif isinstance(other, int):
             self.number_of_floors < other
-        return self
+        return self.number_of_floors < other
 
     def __le__(self, other):
         if isinstance(other, House):
             self.number_of_floors <= other.number_of_floors
         elif isinstance(other, int):
             self.number_of_floors <= other
-        return self
+        return self.number_of_floors <= other
 
     def __gt__(self, other):
         if isinstance(other, House):
             self.number_of_floors > other.number_of_floors
         elif isinstance(other, int):
             self.number_of_floors > other
-        return self
+        return self.number_of_floors > other
 
     def __ge__(self, other):
         if isinstance(other, House):
             self.number_of_floors >= other.number_of_floors
         elif isinstance(other, int):
             self.number_of_floors >= other
-        return self
+        return self.number_of_floors >= other
 
     def __ne__(self, other):
         if isinstance(other, House):
             self.number_of_floors != other.number_of_floors
         elif isinstance(other, int):
             self.number_of_floors != other
-        return self
+        return self.number_of_floors != other
 
 
 h1 = House('ЖК Эльбрус', 10)
