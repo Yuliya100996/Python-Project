@@ -18,10 +18,9 @@ class House:
 
     def __eq__(self, other):
         if isinstance(other, House):
-            self.number_of_floors == other.number_of_floors
+            return self.number_of_floors == other.number_of_floors
         elif isinstance(other, int):
-            self.number_of_floors == other
-        return self
+            return self.number_of_floors == other
 
     def __add__(self, value):
         if isinstance(value, House):
