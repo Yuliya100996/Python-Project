@@ -14,30 +14,29 @@ class Plant:
 class Mammal(Animal):
 
     def eat(self, food):
-        self.food = food
-        if self.food == Plant.edible:
+        if food.edible:
             self.fed = True
-            return f'{self.name} съел {food.name}'
+            print(f'{self.name} съел {food.name}')
         else:
             self.alive = False
-            return f'{self.name} не стал есть {food.name}'
+            print(f'{self.name} не стал есть {food.name}')
 
 class Predator(Animal):
 
     def eat(self, food):
-        self.food = food
-        if self.food == Plant.edible:
+        if food.edible:
             self.fed = True
-            return f'{self.name} съел {food.name}'
+            print(f'{self.name} съел {food.name}')
         else:
             self.alive = False
-            return f'{self.name} не стал есть {food.name}'
+            print(f'{self.name} не стал есть {food.name}')
 
 class Flower(Plant):
     pass
 
 class Fruit(Plant):
-    pass
+    edible = True
+
 
 
 
