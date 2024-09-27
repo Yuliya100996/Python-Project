@@ -26,7 +26,7 @@ class Vehicle:
 
     def set_color(self, new_color):
         self.new_color = new_color
-        if new_color.lower() in Vehicle.__COLOR_VARIANTS:
+        if new_color in Vehicle.__COLOR_VARIANTS:
             self.__color = self.new_color
         else:
             print(f'Нельзя сменить цвет на {self.new_color}')
