@@ -9,7 +9,8 @@ class Product:
         return f'{self.name}, {self.weight}, {self.category}'
 
 class Shop():
-    __file_name = 'products.txt'   # Инкапсулированный атрибут
+    def __init__(self):
+        self.__file_name = 'products.txt'   # Инкапсулированный атрибут
 
     def get_products(self):   # Метод get_products(self), который считывает всю информацию из файла __file_name, закрывает его и возвращает единую строку со всеми товарами из файла __file_name.
         file = open(self.__file_name, 'r')
@@ -18,7 +19,7 @@ class Shop():
         return _file
 
     def add(self, *products):
-        file = open(self.__file_name, 'a+')
+        file = open(self.__file_name, 'a')
         for i in products:
             if i.name in self.get_products():
                 print(f'Продукт {i} уже есть в магазине')
