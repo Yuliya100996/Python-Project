@@ -20,7 +20,7 @@ class WordsFinder:
         result = {}
         word = word.lower()
         for file_name, words in all_words.items():
-            result[file_name] = words.index(word)
+            result[file_name] = words.index(word) + 1
             return result
 
     def count(self, word):
