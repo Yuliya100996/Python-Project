@@ -1,5 +1,19 @@
 import unittest
-from module_12_1 import *
+
+
+class Runner:
+    def __init__(self, name):
+        self.name = name
+        self.distance = 0
+
+    def run(self):
+        self.distance += 10
+
+    def walk(self):
+        self.distance += 5
+
+    def __str__(self):
+        return self.name
 
 
 class RunnerTest(unittest.TestCase):
@@ -22,6 +36,10 @@ class RunnerTest(unittest.TestCase):
             test3_2.run()
             test3_1.walk()
         self.assertNotEqual(test3_2.distance, test3_1.distance)
+
+if __name__ == '__main__':
+    result = unittest.main
+    print(result)
 
 
 
