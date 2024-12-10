@@ -18,11 +18,11 @@ cursor.execute('CREATE INDEX IF NOT EXISTS idx_username ON Users (username)')
 #for i in range(10):
     #cursor.execute('INSERT INTO Users (username, email, age, balance) VALUES (?, ?, ?, ?)', (f'User{1+i}', f'example{1+i}@gmail.com', f'{(i+1)*10}', 1000))
 
-#cursor.execute("UPDATE Users SET balance = ? WHERE id%2 <> ?", (500, 0))
+#cursor.execute("UPDATE Users SET balance = ? WHERE id%2 != ?", (500, 0))
 
 #cursor.execute("DELETE FROM Users WHERE (id+2)%3 = ?", (0,))
 
-cursor.execute("SELECT username, email, age, balance FROM Users WHERE age <> ?", (60,))
+cursor.execute("SELECT username, email, age, balance FROM Users WHERE age != ?", (60,))
 users = cursor.fetchall()
 for user in users:
     print(f"Имя: {user[0]} | Почта: {user[1]} | Возраст: {user[2]} | Баланс {user[3]}")
