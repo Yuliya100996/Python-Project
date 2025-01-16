@@ -17,4 +17,4 @@ async def get_user(user_id: str) -> str:
 
 @app.get("/user")
 async def get_user_data(username: str, age: str) -> str:
-    return f"Информация о пользователе. Имя: 'Юлия', Возраст: 28."
+    return f"Информация о пользователе. Имя: '{username}', Возраст: {age}."
